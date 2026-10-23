@@ -1,4 +1,4 @@
-# tailwindcss-highlights - A plugin for tailwindcss
+# tailwindcss-highlights-v4 - A plugin for tailwindcss
 
 > **Note:** This is a fork of [jln13x/tailwindcss-highlights](https://github.com/jln13x/tailwindcss-highlights) by Julian Hubatsch, updated to add Tailwind CSS v4 support. All credit for the original plugin design and implementation goes to the original author, this fork just patches it to keep working on v4.
 
