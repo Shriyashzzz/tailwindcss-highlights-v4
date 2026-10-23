@@ -4,7 +4,7 @@
 
 See it in Action 👉 [Preview](https://tailwindcss-highlights.hubatsch.dev/) or [Playground](https://play.tailwindcss.com/hM0gHS3erl)
 
-> ⚠️ The Preview and Playground links above are the original author's demos, which use the original `tailwindcss-highlights` package (Tailwind v3 only). Do not install from what those pages show, -for Tailwind v4, install `tailwindcss-highlights-v4` as described below.
+> ⚠️ The Preview and Playground links above are the original author's demos, which use the original `tailwindcss-highlights` package (Tailwind v3 only). Don't copy the install instructions from those pages. For Tailwind v4, install `tailwindcss-highlights-v4` as described below.
 
 This plugin adds utility classes to easily add highlights to your texts.
 
@@ -12,7 +12,9 @@ This plugin adds utility classes to easily add highlights to your texts.
 
 To install the package, run
 
-    npm install -D tailwindcss-highlights-v4
+```bash
+npm install -D tailwindcss-highlights-v4
+```
 
 ### Tailwind CSS v4
 
@@ -20,7 +22,7 @@ In v4 plugins are loaded from your CSS entry file instead. Add this alongside yo
 
 ```css
 @import "tailwindcss";
-@plugin "tailwindcss-highlights";
+@plugin "tailwindcss-highlights-v4";
 ```
 
 If you're still using a legacy `tailwind.config.js` for other settings, you can point v4 at it explicitly with `@config` instead, and it'll pick up plugins listed there too:
@@ -32,14 +34,12 @@ If you're still using a legacy `tailwind.config.js` for other settings, you can 
 
 ### Tailwind CSS v3
 
-This package is backward compatible, meaning if you'd like to use this package for tailwind v3, you can still do so.
-
-Add the plugin to the `tailwind.config.js` file in:
+This package should also work with Tailwind v3 (not tested on recent v3 releases). If you'd like to use it there, add the plugin to your `tailwind.config.js`:
 
 ```javascript
 module.exports = {
   plugins: [
-    require('tailwindcss-highlights-v4')),
+    require('tailwindcss-highlights-v4'),
   ]
 }
 ```
@@ -52,14 +52,12 @@ Use `highlight` to add the default highlight (variant 1) to your element.
 <p class="highlight">Lorem Ipsum</p>
 ```
 
-\
-To change the color of the highlight use `highlight-{color}`. All the colors from your theme (default ones and customs) are available aswell as [arbitrary values](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values).
+To change the color of the highlight use `highlight-{color}`. All the colors from your theme (default ones and customs) are available as well as [arbitrary values](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values).
 
 ```html
 <p class="highlight highlight-indigo-600">Lorem Ipsum</p>
 ```
 
-\
 You can choose from different kinds of variants with `highlight-variant-{value}`. Check out the available variants on the [Preview](https://tailwindcss-highlights.hubatsch.dev/) or use your own variant e.g. `highlight-variant-[url(./path/to/custom-variant.svg)]`.
 
 ```html
@@ -68,13 +66,11 @@ You can choose from different kinds of variants with `highlight-variant-{value}`
 
 Credits for some of the variants: [svgbox](https://svgbox.net/)
 
-\
-Use the `highlight-spread-`-Utility to make the highlight spread into some direction.
+Use the `highlight-spread-` utility to make the highlight spread into some direction.
 
 - `highlight-spread-{size}` - Spread in all directions
 - `highlight-spread-{y,x}-{size}` - Spread on the x or y axis
 - `highlight-spread-{t,b,l,r}-{size}` - Set the spread for each direction individually
-  <br />
 
 | Size   | Value   |
 | ------ | ------- |
@@ -86,7 +82,6 @@ Use the `highlight-spread-`-Utility to make the highlight spread into some direc
 | `xl`   | `-16px` |
 
 [Arbitrary values](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values) are also supported.
-<br />
 
 ```html
 <p
@@ -110,9 +105,8 @@ Use the `highlight-spread-`-Utility to make the highlight spread into some direc
 
 ## Other Examples
 
-This plugin adds the highlight as `::after`-pseudo element so its possible to add additional styling by using the `after:`-utility.
-\
-<br />
+This plugin adds the highlight as an `::after` pseudo-element, so it's possible to add additional styling by using the `after:` utility.
+
 **Change the position**
 
 ```html
@@ -125,21 +119,24 @@ This plugin adds the highlight as `::after`-pseudo element so its possible to ad
 
 **Adding a gradient to the highlight**
 
+On Tailwind v4, gradients use `bg-linear-to-*`:
+
 ```html
 <p
-  class="highlight highlight-variant-12 after:bg-gradient-to-tr after:from-amber-500 after:to-sky-500"
+  class="highlight highlight-variant-12 after:bg-linear-to-tr after:from-amber-500 after:to-sky-500"
 >
   Lorem Ipsum
 </p>
 ```
 
-\
+On Tailwind v3, use `after:bg-gradient-to-tr` instead.
+
 **Rotate the highlight**
 
 ```html
 <p class="highlight highlight-variant-12 after:rotate-12">Lorem Ipsum</p>
 ```
 
-Note: The owner of this repository is not with associated with the company Tailwind Labs Inc. This is just a plugin for [tailwindcss](https://tailwindcss.com/)
+Note: The owner of this repository is not associated with the company Tailwind Labs Inc. This is just a plugin for [tailwindcss](https://tailwindcss.com/)
 
 This is an unofficial fork maintained independently of the original author, [jln13x](https://github.com/jln13x). If you're not specifically here for Tailwind v4 support, check out [the original repo](https://github.com/jln13x/tailwindcss-highlights) instead.
