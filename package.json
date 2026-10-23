@@ -2,7 +2,10 @@
   "name": "tailwindcss-highlights-v4",
   "version": "1.0.0",
   "description": "A tailwindcss plugin to add highlights to your text (Tailwind v4-compatible fork)",
-  "repository": "https://github.com/Shriyashzzz/tailwindcss-highlights",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shriyashzzz/tailwindcss-highlights-v4.git"
+  },
   "keywords": [
     "plugin",
     "tailwind",
@@ -23,13 +26,12 @@
     "dist"
   ],
   "bugs": {
-    "url": "https://github.com/Shriyashzzz/tailwindcss-highlights/issues"
+    "url": "https://github.com/Shriyashzzz/tailwindcss-highlights-v4/issues"
   },
-  "homepage": "https://github.com/Shriyashzzz/tailwindcss-highlights#readme",
+  "homepage": "https://github.com/Shriyashzzz/tailwindcss-highlights-v4#readme",
   "scripts": {
     "prepare": "tsc",
     "build": "tsc",
-    "publish": "npm run build && npm publish",
     "optimize": "svgo -f ./highlights -o ./highlights"
   },
   "peerDependencies": {
